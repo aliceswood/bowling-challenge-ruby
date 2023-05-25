@@ -1,9 +1,9 @@
 class Frame
-  attr_accessor :roll_results, :roll_points
+  attr_accessor :roll_results, :frame_points
 
   def initialize
     @roll_results = []
-    @roll_points = 0
+    @frame_points = 0
   end
 
   def roll(pins_knocked_over)
@@ -16,7 +16,7 @@ class Frame
     end
   end
 
-  def calculate_roll_points
+  def calculate_frame_points
     @roll_results.reduce(:+)
   end
 
