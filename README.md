@@ -55,3 +55,6 @@ Initial plan and thoughts
 
 Initial tests to start with
 ![Initial Tests](images/example_tests.png)
+
+Amendments to work with frame class
+![Frame thoughts](images/frame_class_planning.png)

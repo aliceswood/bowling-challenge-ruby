@@ -7,11 +7,15 @@ class Frame
   end
 
   def roll(pins_knocked_over)
-    @roll_results << pins_knocked_over
+    if roll_results.length > 2
+      fail "one frame is maximum 2 rolls"
+    else 
+      @roll_results << pins_knocked_over
+    end
   end
 
   def calculate_roll_points
-
+    @roll_results.reduce(:+)
   end
 end
 
