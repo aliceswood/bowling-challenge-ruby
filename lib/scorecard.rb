@@ -1,6 +1,8 @@
 require 'frame'
 
 class Scorecard
+  attr_accessor :current_score, :score_array
+  
   def initialize
     @current_score = 0
     @score_array = []

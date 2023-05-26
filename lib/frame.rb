@@ -6,13 +6,13 @@ class Frame
     @frame_points = 0
   end
 
-  def roll(pins_knocked_over)
-    if roll_results.length > 2
-      fail "one frame is maximum 2 rolls"
-    elsif @roll_results.reduce(:+) == 10
-      fail "it is the end of this frame!"
+  def rolls(roll1, roll2)
+    @roll_results << roll1
+    if roll1 == 10
+      roll2 = 0
+      @roll_results << roll2
     else 
-      @roll_results << pins_knocked_over
+      @roll_results << roll2
     end
   end
 
