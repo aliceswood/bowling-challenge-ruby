@@ -3,7 +3,6 @@ class Frame
 
   def initialize
     @roll_results = []
-    @frame_points = 0
   end
 
   def rolls(roll1, roll2)
@@ -18,6 +17,14 @@ class Frame
 
   def calculate_frame_points
     @roll_results.reduce(:+)
+  end
+
+  def is_strike?
+    @roll_results == [10, 0]
+  end
+
+  def is_spare?
+    self.calculate_frame_points == 10 && !is_strike?
   end
 
 end

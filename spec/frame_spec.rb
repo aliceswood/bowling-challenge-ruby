@@ -5,7 +5,6 @@ RSpec.describe 'Frame' do
     it 'initializes with no roll points or roll results' do
       frame = Frame.new
       expect(frame.roll_results).to eq []
-      expect(frame.frame_points).to eq 0
     end
   end
 
@@ -28,7 +27,18 @@ RSpec.describe 'Frame' do
       expect(frame.calculate_frame_points).to eq 10
     end
     
-    
+    it 'recognises if the first roll was a strike' do
+      frame = Frame.new
+      frame.rolls(10, 0)
+      expect(frame.calculate_frame_points).to eq 10
+      expect(frame.is_strike?).to eq true
+    end
 
+    it 'recognises if the rolls made a spare' do
+      frame = Frame.new
+      frame.rolls(4, 6)
+      expect(frame.calculate_frame_points).to eq 10
+      expect(frame.is_spare?).to eq true
+    end
   end
 end
