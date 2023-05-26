@@ -1,5 +1,5 @@
 class Frame
-  attr_accessor :calculate_frame_points
+  attr_accessor :calculate_frame_points, :roll_results
 
   def initialize(roll1, roll2)
     @roll_results = [roll1, roll2]
